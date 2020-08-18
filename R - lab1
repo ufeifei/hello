@@ -23,5 +23,5 @@ barplot(names=edudata$Category,
         ylab = "Cost in USD",
         xlab = "Category",
         mgp=c(4,1,0),
-        col=c("red","yellow")) 
+        col=c("red","black")) 
                       
