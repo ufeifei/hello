@@ -1,0 +1,27 @@
+edudata <- read.csv(file.choose())
+head(edudata)
+tail(edudata)
+summary(edudata)
+names(edudata)
+ncol(edudata)
+nrow(edudata)
+barplot(edudata$X2003)
+class(edudata)
+class(edudata$X2003)
+edudata$X2003
+as.numeric(edudata$X2003)
+as.numeric(gsub(",", "", edudata$X2003))
+barplot(as.numeric(gsub(",", "", edudata$X2013)))
+edudata$num2003 <- as.numeric(gsub(",", "", edudata$X2003))
+edudata$num2013 <- as.numeric(gsub(",", "", edudata$X2013))
+barplot(names=edudata$Category,
+        rbind(edudata$num2003, edudata$num2013), 
+        beside=TRUE,
+        main="Costs of educating a child in the USA",
+        las=2,
+        legend.text = c("2003","2013"),
+        ylab = "Cost in USD",
+        xlab = "Category",
+        mgp=c(4,1,0),
+        col=c("red","yellow")) 
+                      
